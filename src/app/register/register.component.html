@@ -1,0 +1,123 @@
+
+<div class="section">
+  <ul>
+    <li class="circle">
+    <li class="circle2"><span>2</span> </li>
+    <li class="circle3">Enter delivery address</li>
+  </ul>
+
+<form (ngSubmit)="onSubmit()" #f="ngForm">
+  <p>Required field*</p>
+<div class="col-md-6" ngModelGroup="userData">
+  <div class="form-group">
+    <label for="username">Username</label>
+    <input
+      type="text"
+      id="username"
+      class="form-control"
+      ngModel
+      name="username"
+      required
+    />
+  </div>
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input
+      type="email"
+      id="email"
+      class="form-control"
+      ngModel
+      name="email"
+      required
+      email
+      #email="ngModel"
+    />
+    <span *ngIf="!email.valid && email.touched" class="help-block">
+        Please enter valid email</span>
+  </div>
+  <div class="form-group">
+    <label>Birthday</label>
+    <input
+      type="date"
+      name="birthday"
+      ngModel
+      required
+      class="form-control"/>
+  </div>
+  <div class="form-group">
+    <label for="pwd">Password</label>
+    <input
+      type="password"
+      id="pwd"
+      class="form-control"
+      ngModel
+      name="pwd"
+      required
+    />
+  </div>
+  <div class="checkbox">
+    <input type="checkbox" name="agree" class="check"/>Set as my preferred address
+  </div>
+</div>
+<div class="col-md-6">
+  <div class="form-group">
+    <label>Gender</label>
+    <select class="form-control" name="gender" ngModel>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label>Address</label>
+    <textarea class="form-control" name="address" ngModel rows="1">
+      </textarea>
+  </div>
+  <div class="form-group">
+    <label>City*</label>
+    <input
+      type="city"
+      id="city"
+      class="form-control"
+      ngModel
+      name="city"
+      required
+    />
+    <textarea class="form-control" name="city" ngModel rows="1">
+      </textarea>
+
+  </div>
+  <ul>
+  <div class="form-group  ">
+   <ol id="state">
+      <label>State*</label>
+     <select class="form-control" name="state" ngModel rows="1">
+       <option value="hanoi">hà nội</option>
+       <option value="hcm">HCM</option>
+       <option value="hcm">Nghệ an</option>
+       <option value="hcm">Đà Nang</option>
+       <option value="hcm">Thanh Hóa</option>
+     </select></ol>
+   <ol id="zipcode">
+      <label>zipcode*</label>
+      <textarea class="form-control" name="zipcode" ngModel rows="1"></textarea>
+   </ol>
+  </div>
+  </ul>
+  <div class="form-group">
+    <label>school</label>
+    <textarea class="form-control" name="school" ngModel rows="1"></textarea>
+
+  </div>
+  <div class="form-group">
+    <label>Company</label>
+    <textarea class="form-control" name="company" ngModel rows="1">
+      </textarea>
+  </div>
+
+
+  <div class="form-group bt">
+    <button [disabled]="!f.valid" type="continue" class="btn btn-primary">Comtinue</button>
+  </div>
+</div>
+</form>
+</div>
